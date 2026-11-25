@@ -1,0 +1,269 @@
+:root {
+  --background: black;
+  --textcolor: white;
+  --accent-1: goldenrod;
+  --accent-2: rgb(1, 182, 198);
+  --accent-3: #071a1d;
+  --glow-red: rgba(239, 68, 68, 0.2);
+  --glow-teal: rgba(0, 183, 183, 0.2);
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 3rem;
+  --space-xl: 5rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+#nav-menu,
+#top-nav-menu {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+
+nav a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--accent-2);
+  border-radius: 0.25rem;
+  background: transparent;
+  color: var(--textcolor);
+  text-decoration: none;
+  align-content: center;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  background: var(--accent-2);
+  color: var(--background);
+}
+nav a:focus {
+  outline: 3px solid var(--accent-3);
+  outline-offset: 2px;
+}
+body {
+  background-color: var(--background);
+  color: var(--textcolor);
+  margin: 1rem;
+  background-image:
+    radial-gradient(circle at bottom left, var(--glow-red), transparent 30%),
+    radial-gradient(circle at top right, var(--glow-teal), transparent 30%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  max-width: 70ch;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+p + p {
+  margin-top: var(--space-sm);
+}
+h1 {
+  font-size: clamp(2rem, 5vw + 1rem, 3rem);
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+  letter-spacing: 0.15rem;
+  color: var(--textcolor);
+}
+header {
+  padding: var(--space-lg) 0 var(--space-md) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  margin-bottom: var(--space-lg);
+}
+header p {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+  color: var(--accent-1);
+  margin-top: 0.5rem;
+  opacity: 0.9;
+}
+h2 {
+  font-size: clamp(1.4rem, 3vw + 0.5rem, 2rem);
+  margin: 0;
+  margin-bottom: var(--space-md);
+}
+h3 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  letter-spacing: 0.15rem;
+  color: var(--textcolor);
+}
+#hero {
+  padding-bottom: var(--space-xl);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: var(--space-xl);
+}
+#hero p:first-of-type {
+  font-family: "Times New Roman", Georgia, serif;
+  font-size: clamp(1.8rem, 4vw + 0.5rem, 2.8rem);
+  line-height: 1.25;
+  color: var(--textcolor);
+  margin-bottom: var(--space-lg);
+  font-weight: 400;
+}
+#hero p:not(:first-of-type) {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 60ch;
+}
+#philosophy {
+  margin-block: var(--space-xl);
+}
+#philosophy ol {
+  list-style: none;
+  counter-reset: philosophy-step;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: var(--space-md);
+}
+#philosophy li {
+  counter-increment: philosophy-step;
+  border-top: 1px solid var(--accent-1);
+  border-bottom: 1px solid var(--accent-1);
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: var(--space-md);
+  border-radius: 0.4rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease;
+}
+#philosophy li:hover {
+  transform: translateY(-4px);
+  background-color: rgba(255, 255, 255, 0.1);
+  background-color: transparent;
+}
+
+#philosophy li::before {
+  content: counter(philosophy-step, decimal-leading-zero);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 2rem;
+  color: var(--accent-1);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+#strategies {
+margin-block: var(--space-xl);
+}
+#strategies ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: var(--space-md);
+}
+#strategies li:first-child {
+  grid-column: 1 / -1;
+  border-top: black;
+  border-bottom: black;
+  padding-left: 1rem;
+  border-left: 1px solid var(--accent-1);
+  border-radius: 0;
+}
+#strategies li {
+  border-bottom: 1px solid var(--accent-1);
+  border-top: 1px solid var(--accent-1);
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: var(--space-md);
+  border-radius: 0.4rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease;
+}
+#strategies li:hover {
+  transform: translateY(-4px);
+  background-color: rgba(255, 255, 255, 0.1);
+  background-color: transparent;
+}
+#strategies li:first-child:hover {
+  transform: none;
+  background-color: transparent;
+}
+
+#EDGE {
+  text-align: center;
+  padding: var(--space-xl) var(--space-md);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: var(--space-xl);
+  background-color: var(--accent-3);
+  border-radius: 0.15rem;
+}
+#EDGE h3 {
+  color: var(--accent-1);
+  margin-bottom: var(--space-sm);
+  font-size: bold;
+}
+#EDGE p {
+  margin: 0 auto;
+  max-width: 56ch;
+}
+#insights {
+    border: 1px;
+    background: #16120a;
+    padding: var(--space-xl) var(--space-md);
+    margin-block: var(--space-lg) var(--space-sm);
+    border-radius: 0.5rem;
+}
+#insights article {
+  padding: var(--space-md);
+  border-top: 1px solid rgba(255, 255, 255, 0.904);
+  text-align: center;
+}
+
+#insights article:hover {
+  transform: translateX(8px);
+  transition: transform 0.25s ease;
+}
+#insights article:hover h4 {
+  color: var(--accent-1);
+}
+#insights article:last-of-type:after {
+  content: "Read perspective → ";
+}
+#insights article:last-of-type {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+}
+#Contact {
+  text-align: center;
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
+}
+#Contact p:last-of-type {
+  letter-spacing: wide;
+  color: var(--accent-1);
+}
+footer {
+  border-top: 1px soolid rgba(255, 255, 255, 0.1);
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+footer nav {
+  margin: var(--space-sm) auto;
+}
+h2,
+h3 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  letter-spacing: 0.04em;
+}
